@@ -8,6 +8,10 @@ def adicionar(x, y):
 def subtrair(x, y):
     return x - y
 
+# Multiplicar dois números
+def multiplicar(x, y):
+    return x * y
+
 # Menu da calculadora
 def menu():
     print("Selecione a operação:")
