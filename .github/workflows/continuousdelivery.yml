@@ -18,4 +18,13 @@ jobs:
           path: |
             **.py
             README.md
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: projetodevops.zip
+      - name: Display structure of downloaded files
+        run: ls -R  
             
