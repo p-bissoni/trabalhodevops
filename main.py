@@ -4,6 +4,10 @@
 def adicionar(x, y):
     return x + y
 
+# Subtrair dois números
+def subtrair(x, y):
+    return x - y
+
 # Menu da calculadora
 def menu():
     print("Selecione a operação:")
