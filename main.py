@@ -1,5 +1,9 @@
 # calculadora.py
 
+# Adicionar dois números
+def adicionar(x, y):
+    return x + y
+
 # Menu da calculadora
 def menu():
     print("Selecione a operação:")
