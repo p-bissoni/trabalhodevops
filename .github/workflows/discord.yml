@@ -13,18 +13,4 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           template: "avatar-with-link"
           include-extras: true
-
-      - name: discord-message
-        uses: Sniddl/discord-commits@v1.6
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Successful commit to **${{ github.repository_owner }}/{{ github.repository }}**.\nDiff: ${{ github.event.compare_url }}"
-          embed: |
-            {
-              "title": "${{ github.event.head_commit.message}}",
-              "description": "${{ github.event.head_commit.id }}",
-              "url": "${{ github.event.compare_url }}",
-              "author": {
-                "name": "${{ github.event.head_commit.author.name }} ({{ github.event.head_commit.author.username }})"
-              }
-            }
+          message: ":rocket: Novo push detectado! :rocket:\n\n**Branch:** {{ref}}\n**Autor:** {{sender.login}}\n**Mensagem:** {{commits[0].message}}"
