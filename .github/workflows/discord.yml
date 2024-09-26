@@ -21,7 +21,7 @@ jobs:
           message: "Successful commit to **${{ github.repository_owner }}/{{ github.repository }}**.\nDiff: ${{ github.event.compare_url }}"
           embed: |
             {
-              "title": "${{ github.event.head_commit.message }}",
+              "title": "${{ github.event.head_commit.message}}",
               "description": "${{ github.event.head_commit.id }}",
               "url": "${{ github.event.compare_url }}",
               "author": {
