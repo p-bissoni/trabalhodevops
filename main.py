@@ -27,5 +27,5 @@ def multiplicar(x: float, y: float):
 def dividir(x: float, y: float):
     #Realiza divisão de dois números, se o divisor for zero, retorna um mensagem de erro
     if y == 0:
-        return "Erro: divisão por zero!"
+        return "Erro: divisão por zero!!"
     return {"resultado": x / y}
