@@ -14,7 +14,7 @@ jobs:
           template: "avatar-with-link"
           include-extras: true
 
-      - name: Discord-Message
+      - name: discord-message
         uses: Sniddl/discord-commits@v1.6
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
