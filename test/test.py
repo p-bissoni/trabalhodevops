@@ -1,5 +1,8 @@
 from src.main import *
 from unittest.mock import patch
+from fastapi.testclient import TestClient
+
+client = TestClient(app)
 
 def test_read_root():
     response = client.get("/")
