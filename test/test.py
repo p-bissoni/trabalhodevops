@@ -1,8 +1,5 @@
-from fastapi.testclient import TestClient
 from src.main import *
-
-import pytest
-import pytest_asyncio
+from unittest.mock import patch
 
 def test_read_root():
     response = client.get("/")
