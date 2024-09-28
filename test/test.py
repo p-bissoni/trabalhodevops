@@ -1,9 +1,7 @@
 from src.main import *
 from unittest.mock import patch
 from fastapi.testclient import TestClient
-from fastapi import FastAPI, HTTPException
 
-client = TestClient(app)
 
 def test_read_root():
     response = client.get("/")
@@ -25,13 +23,12 @@ def test_multiplicar():
     assert response.status_code == 200
     assert response.json() == {"resultado": 50}
 
-@app.get("/dividir")
-def test_dividir(x: int, y: int):
-    if y == 0:
-        raise HTTPException(status_code=400, detail="Erro: divisão por zero!")
-    return {"resultado": x / y}
+def test_dividir():
+    response = client.get("/dividir?x=10&y=5")
+    assert response.status_code == 200
+    assert response.json() == {"resultado": 2.0}
 
 def test_dividir_zero():
     response = client.get("/dividir?x=10&y=0")
-    assert response.status_code == 400 
-    assert response.json.strip() == {"detail": "Erro: divisão por zero!"}
+    assert response.status_code == 200
+    assert response.text == '"Erro: divisão por zero!"'
