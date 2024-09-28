@@ -34,4 +34,4 @@ def test_dividir(x: int, y: int):
 def test_dividir_zero():
     response = client.get("/dividir?x=10&y=0")
     assert response.status_code == 400 
-    assert response.json() == {"detail": "Erro: divisão por zero!"}
+    assert response.json.strip() == {"detail": "Erro: divisão por zero!"}
