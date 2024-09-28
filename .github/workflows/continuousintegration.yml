@@ -54,6 +54,6 @@ jobs:
         echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
     - name: Test with pytest
       run: |
-        pip install pytest pytest-cov 
+        pip install pytest pytest-cov pytest-asyncio
         pytest test/test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
     
